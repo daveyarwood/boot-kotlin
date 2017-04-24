@@ -27,8 +27,7 @@
     (core/with-pass-thru fileset
       (pod/with-eval-in @pod
         (org.jetbrains.kotlin.cli.jvm.K2JVMCompiler/main
-          (into-array String ["-no-jdk"
-                              "-no-stdlib"
+          (into-array String ["-no-stdlib"
                               "-nowarn"
                               "-Xskip-runtime-version-check"]))))))
 
@@ -55,7 +54,6 @@
                       (org.jetbrains.kotlin.cli.jvm.K2JVMCompiler/main
                         (into-array String (->> ["-cp" (System/getProperty "fake.class.path")
                                                  "-d" ~out-path
-                                                 "-no-jdk"
                                                  "-no-stdlib"
                                                  "-nowarn"
                                                  "-Xskip-runtime-version-check"
