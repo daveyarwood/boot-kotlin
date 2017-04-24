@@ -10,7 +10,7 @@ This library provides two [Boot] tasks for [Kotlin] development:
 
 See the [example project](example/) for details.
 
-## kotlin-repl
+## `kotlin-repl`
 
 `kotlin-repl` starts a Kotlin REPL session.
 
