@@ -18,6 +18,20 @@
   [version]
   (pod/make-pod (merge-with into (core/get-env) (compile-env version))))
 
+(core/deftask kotlin-repl
+  "Start a Kotlin REPL session."
+  [v version VERSION str "The desired version of Kotlin. (default: 1.1.1)"]
+  (let [version (or version "1.1.1")
+        pod     (future (compile-pod version))]
+    (core/merge-env! :dependencies (kotlin-deps version))
+    (core/with-pass-thru fileset
+      (pod/with-eval-in @pod
+        (org.jetbrains.kotlin.cli.jvm.K2JVMCompiler/main
+          (into-array String ["-no-jdk"
+                              "-no-stdlib"
+                              "-nowarn"
+                              "-Xskip-runtime-version-check"]))))))
+
 (core/deftask kotlinc
   "Compile Kotlin source files into Java class files."
   [v version VERSION str "The desired version of Kotlin. (default: 1.1.1)"]
