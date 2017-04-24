@@ -11,7 +11,7 @@
 (task-options!
   pom {:project 'io.djy/boot-kotlin
        :version +version+
-       :description "A Boot task for compiling Kotlin source code"
+       :description "Boot tasks for Kotlin development"
        :url "https://github.com/daveyarwood/boot-kotlin"
        :scm {:url "https://github.com/daveyarwood/boot-kotlin"}
        :license {"name" "Eclipse Public License"
