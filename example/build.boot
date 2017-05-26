@@ -1,6 +1,6 @@
 (set-env!
   :source-paths #{"src"}
-  :dependencies '[[io.djy/boot-kotlin       "0.1.0" :scope "test"]
+  :dependencies '[[io.djy/boot-kotlin       "0.2.1" :scope "test"]
                   [alandipert/boot-trinkets "2.0.0" :scope "test"]])
 
 (require '[io.djy.boot-kotlin       :refer (kotlinc)]
