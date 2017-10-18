@@ -18,7 +18,7 @@ recompile, and re-run the `main` function each time.
 ## Build a jar file
 
 ```
-boot kotlinc uber jar -m TestKt.main target
+boot kotlinc uber jar -m TestKt target
 ```
 
 ## Run the jar file
